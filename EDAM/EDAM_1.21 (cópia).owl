@@ -582,7 +582,6 @@
     <!-- http://edamontology.org#is_suported_by -->
 
     <owl:ObjectProperty rdf:about="http://edamontology.org#is_suported_by">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:comment>add for sciphy</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -981,13 +980,21 @@
 
     <owl:Class rdf:about="http://edamontology.org#SciPhyAlignment">
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0292"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://edamontology.org/has_input"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org#SciPhyClean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
     <!-- http://edamontology.org#SciPhyClean -->
 
-    <owl:Class rdf:about="http://edamontology.org#SciPhyClean"/>
+    <owl:Class rdf:about="http://edamontology.org#SciPhyClean">
+        <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0004"/>
+    </owl:Class>
     
 
 
@@ -995,6 +1002,12 @@
 
     <owl:Class rdf:about="http://edamontology.org#SciPhyConverter">
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0260"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://edamontology.org/has_input"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org#SciPhyTrimming"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1017,6 +1030,12 @@
 
     <owl:Class rdf:about="http://edamontology.org#SciPhyProgramExecute">
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0547"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://edamontology.org/has_input"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org#SciPhyModelGenerator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1025,6 +1044,12 @@
 
     <owl:Class rdf:about="http://edamontology.org#SciPhyTrimming">
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_3192"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://edamontology.org/has_input"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org#SciPhyAlignment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -42709,6 +42734,12 @@ sequences matching a given sequence motif or pattern, such as a Prosite pattern 
     <owl:Class rdf:about="http://edamontology.org/operation_2089">
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0258"/>
         <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_2425"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://edamontology.org/has_input"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org#SciPhyConverter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <edamontology:created_in>beta12orEarlier</edamontology:created_in>
         <oboInOwl:hasDefinition>Refine an existing sequence alignment.</oboInOwl:hasDefinition>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/edam#edam"/>
@@ -56504,22 +56535,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     
 
 
-    <!-- http://edamontology.org#ClustalW -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#ClustalW">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyAlignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#Garli -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Garli">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://edamontology.org#Gblocks -->
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#Gblocks">
@@ -56595,6 +56610,34 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     
 
 
+    <!-- http://edamontology.org#Phylip -->
+
+    <owl:NamedIndividual rdf:about="http://edamontology.org#Phylip">
+        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://edamontology.org#PhylipMl -->
+
+    <owl:NamedIndividual rdf:about="http://edamontology.org#PhylipMl">
+        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://edamontology.org#PhylipMp -->
+
+    <owl:NamedIndividual rdf:about="http://edamontology.org#PhylipMp"/>
+    
+
+
+    <!-- http://edamontology.org#PhylipNj -->
+
+    <owl:NamedIndividual rdf:about="http://edamontology.org#PhylipNj"/>
+    
+
+
     <!-- http://edamontology.org#Probcons -->
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#Probcons">
@@ -56617,7 +56660,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     <owl:NamedIndividual rdf:about="http://edamontology.org#ReadSeq">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyConverter"/>
         <is_suported_by rdf:resource="http://edamontology.org#Gblocks"/>
-        <is_suported_by rdf:resource="http://edamontology.org#Total"/>
         <is_suported_by rdf:resource="http://edamontology.org#Trimal"/>
     </owl:NamedIndividual>
     
@@ -56638,15 +56680,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#Tcoffee">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyAlignment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#Total -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Total">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyTrimming"/>
-        <is_suported_by rdf:resource="http://edamontology.org#modelGenerator"/>
     </owl:NamedIndividual>
     
 

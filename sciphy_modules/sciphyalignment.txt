@@ -1,0 +1,6 @@
+EDAM_termos.output_RemovePipe -> EDAM_termos.ClustalW -> EDAM_termos.output_ClustalW
+EDAM_termos.output_RemovePipe -> EDAM_termos.Lobster -> EDAM_termos.output_Lobster
+EDAM_termos.output_RemovePipe -> EDAM_termos.Mafft -> EDAM_termos.output_Mafft
+EDAM_termos.output_RemovePipe -> EDAM_termos.Muscle -> EDAM_termos.output_Muscle
+EDAM_termos.output_RemovePipe -> EDAM_termos.Probcons -> EDAM_termos.output_Probcons
+EDAM_termos.output_RemovePipe -> EDAM_termos.Tcoffee -> EDAM_termos.output_Tcoffee

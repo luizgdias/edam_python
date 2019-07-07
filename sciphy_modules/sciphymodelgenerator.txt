@@ -1,0 +1,1 @@
+EDAM_termos.output_ReadSeq -> EDAM_termos.ModelGenerator -> EDAM_termos.output_ModelGenerator

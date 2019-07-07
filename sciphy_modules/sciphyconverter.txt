@@ -1,0 +1,1 @@
+EDAM_termos.GBlocks -> EDAM_termos.ReadSeq -> EDAM_termos.output_ReadSeq
