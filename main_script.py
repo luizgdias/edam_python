@@ -10,19 +10,19 @@ instances_SciPhyAlignment 		= onto.SciPhyAlignment
 instances_SciPhyConverter 		= onto.SciPhyConverter
 instances_SciPhyModelGenerator 	= onto.SciPhyModelGenerator
 instances_SciPhyProgramExecute	= onto.SciPhyProgramExecute
-instances_SciPhyTrimming		= onto.SciPhyTrimming
+# instances_SciPhyTrimming		= onto.SciPhyTrimming
 instances_SciPhyClean			= onto.SciPhyClear
 #instances_SciPhyDatasets 		= onto.SciPhyDataSets
 
 os.system('rm sciphy_modules/sciphyclear.txt')
 os.system('rm sciphy_modules/sciphyalignment.txt')
-os.system('rm sciphy_modules/sciphytrimming.txt')
+# os.system('rm sciphy_modules/sciphytrimming.txt')
 os.system('rm sciphy_modules/sciphyconverter.txt')
 os.system('rm sciphy_modules/sciphymodelgenerator.txt')
 os.system('rm sciphy_modules/sciphyprogramexecute.txt')
 os.system('touch sciphy_modules/sciphyclear.txt')
 os.system('touch sciphy_modules/sciphyalignment.txt')
-os.system('touch sciphy_modules/sciphytrimming.txt')
+# os.system('touch sciphy_modules/sciphytrimming.txt')
 os.system('touch sciphy_modules/sciphyconverter.txt')
 os.system('touch sciphy_modules/sciphymodelgenerator.txt')
 os.system('touch sciphy_modules/sciphyprogramexecute.tx')
@@ -38,10 +38,10 @@ for alignmentprogram in instances_SciPhyAlignment.instances():
 	alignment.write(str(alignmentprogram.has_input)+" -> "+str(alignmentprogram)+" -> "+str(alignmentprogram.has_output)+"\n")
 	alignment.close()
 
-for trimmingprogram in instances_SciPhyTrimming.instances():
-	trimming = open('sciphy_modules/sciphytrimming.txt','a')
-	trimming.write(str(trimmingprogram.has_input)+" -> "+str(trimmingprogram)+" -> "+str(trimmingprogram.has_output)+"\n")
-	trimming.close()
+# for trimmingprogram in instances_SciPhyTrimming.instances():
+# 	trimming = open('sciphy_modules/sciphytrimming.txt','a')
+# 	trimming.write(str(trimmingprogram.has_input)+" -> "+str(trimmingprogram)+" -> "+str(trimmingprogram.has_output)+"\n")
+# 	trimming.close()
 
 for convertergprogram in instances_SciPhyConverter.instances():
 	converter = open('sciphy_modules/sciphyconverter.txt','a')
@@ -62,7 +62,7 @@ os.system('rm derivations/sciphyversions.txt')
 os.system('touch derivations/sciphyversions.txt')
 for clearprogram in instances_SciPhyClean.instances():
 	for alignmentprogram in instances_SciPhyAlignment.instances():
-		for trimmingprogram in instances_SciPhyTrimming.instances():
+		# for trimmingprogram in instances_SciPhyTrimming.instances():
 			for converterprogram in instances_SciPhyConverter.instances():
 				for programexecuteprogram in instances_SciPhyProgramExecute.instances():
 					updatesciphyversion = open("derivations/sciphyversions.txt", "a")
@@ -70,18 +70,19 @@ for clearprogram in instances_SciPhyClean.instances():
 						for line in file:
 							with open("sciphy_modules/sciphyalignment.txt", "r") as file1:
 								for line1 in file1:
-									with open("sciphy_modules/sciphytrimming.txt", "r") as file2:
-										for line2 in file2:
+									# with open("sciphy_modules/sciphytrimming.txt", "r") as file2:
+									# 	for line2 in file2:
 											with open("sciphy_modules/sciphyconverter.txt", "r") as file3:
 												for line3 in file3:
 													with open("sciphy_modules/sciphyprogramexecute.txt", "r") as file4:
 														for line4 in file4:
-															if((str(alignmentprogram.has_input) in line) and (str(trimmingprogram.has_input) in line1) and (str(convertergprogram.has_input) in line2) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
-																sciphyderivarion = str(clearprogram)+ " -> "+str(alignmentprogram)+" -> "+str(trimmingprogram)+" -> "+(str(convertergprogram))+" -> "+(str(modelgeneratorprogram))+" -> "+(str(programexecuteprogram))+"\n"
+															# if((str(alignmentprogram.has_input) in line) and (str(trimmingprogram.has_input) in line1) and (str(convertergprogram.has_input) in line2) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
+															if((str(alignmentprogram.has_input) in line) and (str(convertergprogram.has_input) in line1) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
+																sciphyderivarion = str(clearprogram)+ " -> "+str(alignmentprogram)+" -> "+(str(convertergprogram))+" -> "+(str(modelgeneratorprogram))+" -> "+(str(programexecuteprogram))+"\n"
 																updatesciphyversion.write(sciphyderivarion)
 													file4.close()
 											file3.close()
-									file2.close()
+									# file2.close()
 							file1.close()	
 					file.close()
 					updatesciphyversion.close()								

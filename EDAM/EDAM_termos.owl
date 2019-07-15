@@ -661,7 +661,6 @@
     <owl:ObjectProperty rdf:about="http://edamontology.org/has_input">
         <owl:inverseOf rdf:resource="http://edamontology.org/is_input_of"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://edamontology.org/operation_0004"/>
         <rdfs:range rdf:resource="http://edamontology.org/data_0006"/>
         <oboOther:is_anti_symmetric>false</oboOther:is_anti_symmetric>
@@ -56510,13 +56509,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#GBlocks">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyTrimming"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_ClustalW"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Lobster"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Mafft"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Muscle"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Probcons"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Tcoffee"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_GBlocks"/>
     </owl:NamedIndividual>
     
 
@@ -56527,16 +56519,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
         <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
         <edamontology:has_input rdf:resource="http://edamontology.org#output_ModelGenerator"/>
         <edamontology:has_output rdf:resource="http://edamontology.org#output_Garli"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#Lobster -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Lobster">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyAlignment"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_RemovePipe"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_Lobster"/>
     </owl:NamedIndividual>
     
 
@@ -56581,32 +56563,12 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     
 
 
-    <!-- http://edamontology.org#Paup -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Paup">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_ModelGenerator"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_Paup"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://edamontology.org#PhyML -->
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#PhyML">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
         <edamontology:has_input rdf:resource="http://edamontology.org#output_ModelGenerator"/>
         <edamontology:has_output rdf:resource="http://edamontology.org#output_PhyML"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#Phylip -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Phylip">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_ModelGenerator"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_Phylip"/>
     </owl:NamedIndividual>
     
 
@@ -56635,8 +56597,11 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#ReadSeq">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyConverter"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#GBlocks"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Trimal"/>
+        <edamontology:has_input rdf:resource="http://edamontology.org#output_ClustalW"/>
+        <edamontology:has_input rdf:resource="http://edamontology.org#output_Mafft"/>
+        <edamontology:has_input rdf:resource="http://edamontology.org#output_Muscle"/>
+        <edamontology:has_input rdf:resource="http://edamontology.org#output_Probcons"/>
+        <edamontology:has_input rdf:resource="http://edamontology.org#output_Tcoffee"/>
         <edamontology:has_output rdf:resource="http://edamontology.org#output_ReadSeq"/>
     </owl:NamedIndividual>
     
@@ -56665,23 +56630,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#Trimal">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyTrimming"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_ClustalW"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Lobster"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Mafft"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Muscle"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Probcons"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_Tcoffee"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_Trimal"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#Weighbor -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#Weighbor">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyProgramExecute"/>
-        <edamontology:has_input rdf:resource="http://edamontology.org#output_ModelGenerator"/>
-        <edamontology:has_output rdf:resource="http://edamontology.org#output_Weighbor"/>
     </owl:NamedIndividual>
     
 
@@ -56776,15 +56724,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     
 
 
-    <!-- http://edamontology.org#output_Lobster -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#output_Lobster">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
-        <edamontology:is_input_of rdf:resource="http://edamontology.org#Trimal"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://edamontology.org#output_Mafft -->
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#output_Mafft">
@@ -56820,25 +56759,9 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
     
 
 
-    <!-- http://edamontology.org#output_Paup -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#output_Paup">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://edamontology.org#output_PhyML -->
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#output_PhyML">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#output_Phylip -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#output_Phylip">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
     </owl:NamedIndividual>
     
@@ -56872,7 +56795,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
 
     <owl:NamedIndividual rdf:about="http://edamontology.org#output_RemovePipe">
         <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
-        <edamontology:is_input_of rdf:resource="http://edamontology.org#Lobster"/>
         <edamontology:is_input_of rdf:resource="http://edamontology.org#Mafft"/>
         <edamontology:is_input_of rdf:resource="http://edamontology.org#Muscle"/>
     </owl:NamedIndividual>
@@ -56893,32 +56815,6 @@ Trim sequences (typically from an automated DNA sequencer) to remove sequence-sp
         <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
         <edamontology:is_input_of rdf:resource="http://edamontology.org#ReadSeq"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://edamontology.org#output_Weighbor -->
-
-    <owl:NamedIndividual rdf:about="http://edamontology.org#output_Weighbor">
-        <rdf:type rdf:resource="http://edamontology.org#SciPhyDataSets"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://edamontology.org#Mafft"/>
-            <rdf:Description rdf:about="http://edamontology.org#Trimal"/>
-        </owl:distinctMembers>
-    </rdf:Description>
 </rdf:RDF>
 
 

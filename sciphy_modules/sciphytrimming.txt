@@ -1,2 +1,0 @@
-EDAM_termos.output_ClustalW -> EDAM_termos.GBlocks -> EDAM_termos.output_GBlocks
-EDAM_termos.output_ClustalW -> EDAM_termos.Trimal -> EDAM_termos.output_Trimal
