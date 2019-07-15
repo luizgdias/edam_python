@@ -60,6 +60,7 @@ for programexecuteprogram in instances_SciPhyProgramExecute.instances():
 
 os.system('rm derivations/sciphyversions.txt')
 os.system('touch derivations/sciphyversions.txt')
+cont = 1
 for clearprogram in instances_SciPhyClean.instances():
 	for alignmentprogram in instances_SciPhyAlignment.instances():
 		# for trimmingprogram in instances_SciPhyTrimming.instances():
@@ -79,7 +80,8 @@ for clearprogram in instances_SciPhyClean.instances():
 															# if((str(alignmentprogram.has_input) in line) and (str(trimmingprogram.has_input) in line1) and (str(convertergprogram.has_input) in line2) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
 															if((str(alignmentprogram.has_input) in line) and (str(convertergprogram.has_input) in line1) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
 																sciphyderivarion = str(clearprogram)+ " -> "+str(alignmentprogram)+" -> "+(str(convertergprogram))+" -> "+(str(modelgeneratorprogram))+" -> "+(str(programexecuteprogram))+"\n"
-																updatesciphyversion.write(sciphyderivarion)
+																updatesciphyversion.write(str(cont) + ") "+sciphyderivarion)
+																cont = cont+1
 													file4.close()
 											file3.close()
 									# file2.close()
