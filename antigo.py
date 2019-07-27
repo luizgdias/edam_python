@@ -43,9 +43,9 @@ for alignmentprogram in instances_SciPhyAlignment.instances():
 # 	trimming.write(str(trimmingprogram.has_input)+" -> "+str(trimmingprogram)+" -> "+str(trimmingprogram.has_output)+"\n")
 # 	trimming.close()
 
-for converterprogram in instances_SciPhyConverter.instances():
+for convertergprogram in instances_SciPhyConverter.instances():
 	converter = open('sciphy_modules/sciphyconverter.txt','a')
-	converter.write(str(converterprogram.has_input)+" -> "+str(converterprogram)+" -> "+str(converterprogram.has_output)+"\n")
+	converter.write(str(convertergprogram.has_input)+" -> "+str(convertergprogram)+" -> "+str(convertergprogram.has_output)+"\n")
 	converter.close()
 
 for modelgeneratorprogram in instances_SciPhyModelGenerator.instances():
@@ -61,20 +61,37 @@ for programexecuteprogram in instances_SciPhyProgramExecute.instances():
 os.system('rm derivations/sciphyversions.txt')
 os.system('touch derivations/sciphyversions.txt')
 cont = 1
-updatesciphyversion = open("derivations/sciphyversions.txt", "a")
 for clearprogram in instances_SciPhyClean.instances():
 	for alignmentprogram in instances_SciPhyAlignment.instances():
-		for converterprogram in instances_SciPhyConverter.instances():
-			for modelgeneratorprogram in instances_SciPhyModelGenerator.instances():
+		# for trimmingprogram in instances_SciPhyTrimming.instances():
+			for converterprogram in instances_SciPhyConverter.instances():
 				for programexecuteprogram in instances_SciPhyProgramExecute.instances():
-					if((clearprogram.has_output in alignmentprogram.has_input) and (alignmentprogram.has_output in converterprogram.has_input) and (converterprogram.has_output in modelgeneratorprogram.has_input) and (modelgeneratorprogram.has_output in programexecuteprogram.has_input)):
-						sciphyderivarion = (str(clearprogram) + " -> " +str(alignmentprogram) +" -> "+ str(converterprogram)+" -> "+str(modelgeneratorprogram)+" -> "+str(programexecuteprogram))
-						updatesciphyversion.write(str(cont) + ") "+ sciphyderivarion +"\n")
-						cont = cont+1
-
-print("Sciphy derivation process ended successfully!")
-print("Number of sciphy derivations: " +str(cont-1))			
-
+					updatesciphyversion = open("derivations/sciphyversions.txt", "a")
+					with open("sciphy_modules/sciphyclear.txt", "r") as file:
+						for line in file:
+							with open("sciphy_modules/sciphyalignment.txt", "r") as file1:
+								for line1 in file1:
+									# with open("sciphy_modules/sciphytrimming.txt", "r") as file2:
+									# 	for line2 in file2:
+											with open("sciphy_modules/sciphyconverter.txt", "r") as file3:
+												for line3 in file3:
+													with open("sciphy_modules/sciphyprogramexecute.txt", "r") as file4:
+														for line4 in file4:
+															# if((str(alignmentprogram.has_input) in line) and (str(trimmingprogram.has_input) in line1) and (str(convertergprogram.has_input) in line2) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
+															if((str(alignmentprogram.has_input) in line) and (str(convertergprogram.has_input) in line1) and (str(modelgeneratorprogram.has_input) in line3) and (str(programexecuteprogram.has_input) in line4)):
+																sciphyderivarion = str(clearprogram)+ " -> "+str(alignmentprogram)+" -> "+(str(convertergprogram))+" -> "+(str(modelgeneratorprogram))+" -> "+(str(programexecuteprogram))+"\n"
+																updatesciphyversion.write(str(cont) + ") "+sciphyderivarion)
+																cont = cont+1
+													file4.close()
+											file3.close()
+									# file2.close()
+							file1.close()	
+					file.close()
+					updatesciphyversion.close()								
+else:
+	derivationnumber = sum(1 for linha in open('derivations/sciphyversions.txt'))
+	print("Sciphy derivation process ended successfully!")
+	print("Number of sciphy derivations: " +str(derivationnumber))
 
 
 
@@ -96,7 +113,7 @@ print("Number of sciphy derivations: " +str(cont-1))
 #					readseq 	is_supported_by 	gblocks
 #								is_supported_by		trimal
 #
-# 4) sciphyTriming this transformation was removed in this version*
+# 4) sciphyTriming 
 #					gblocks 	is_supported_by 	modelgenerator
 #					total		is_supported_by 	modelgenerator
 #					trimal		is_supported_by 	modelgenerator

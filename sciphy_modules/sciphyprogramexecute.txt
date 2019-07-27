@@ -1,4 +1,4 @@
-EDAM_termos.output_ModelGenerator -> EDAM_termos.Garli -> EDAM_termos.output_Garli
-EDAM_termos.output_ModelGenerator -> EDAM_termos.MrBayes -> EDAM_termos.output_MrBayes
-EDAM_termos.output_ModelGenerator -> EDAM_termos.PhyML -> EDAM_termos.output_PhyML
-EDAM_termos.output_ModelGenerator -> EDAM_termos.Raxml -> EDAM_termos.output_Raxml
+[EDAM_termos.output_ModelGenerator] -> EDAM_termos.Garli -> EDAM_termos.output_Garli
+[EDAM_termos.output_ModelGenerator] -> EDAM_termos.MrBayes -> EDAM_termos.output_MrBayes
+[EDAM_termos.output_ModelGenerator] -> EDAM_termos.PhyML -> EDAM_termos.output_PhyML
+[EDAM_termos.output_ModelGenerator] -> EDAM_termos.Raxml -> EDAM_termos.output_Raxml
